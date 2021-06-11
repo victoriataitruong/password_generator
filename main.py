@@ -20,7 +20,7 @@ layout = [[sg.Text("Random Password Generator", font=("Helvetica", 25, "bold"))]
                      # Defining the window's contents
                      ), sg.Button('Quit', border_width=5, pad=(25, 10), font=("Helvetica", 10, "bold"))]]
 
-window = sg.Window('Lp Password Generator', layout)
+window = sg.Window('Victorias Password Generator', layout)
 
 ####  Display and interact with the Window using an Event Loop
 while True:
