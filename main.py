@@ -1,14 +1,11 @@
+# import libraries
 import random
 import string
-#### module allows us to copy and paste text to and from the clipboard to your computer
 import pyperclip
-####  for creating gui
 import PySimpleGUI as sg
 
-
-
 sg.theme("Darkbrown")
-####  Defining the window's contents
+# defining the window's contents
 layout = [[sg.Text("Random Password Generator", font=("Helvetica", 25, "bold"))],
           [sg.Text("Select Password Length", key='-OUTPUT1-', font=("Helvetica", 10, "bold"))],
           [sg.Spin([i for i in range(1, 11)], initial_value=1,
@@ -17,12 +14,12 @@ layout = [[sg.Text("Random Password Generator", font=("Helvetica", 25, "bold"))]
           [sg.Text(size=(40, 1), key='-OUTPUT-', font=("Helvetica", 25, "bold"))],
           [sg.Button('Generate', border_width=5, pad=(25, 10), font=("Helvetica", 10, "bold")),
            sg.Button('Copy', border_width=5, pad=(25, 10), font=("Helvetica", 10, "bold")
-                     # Defining the window's contents
+                     # defining the window's contents
                      ), sg.Button('Quit', border_width=5, pad=(25, 10), font=("Helvetica", 10, "bold"))]]
 
 window = sg.Window('Victorias Password Generator', layout)
 
-####  Display and interact with the Window using an Event Loop
+# display and interact with the Window using an Event Loop
 while True:
     event, values = window.read()
 
@@ -47,9 +44,9 @@ while True:
         ####  Output a message to the window
         sg.popup("Password is copied to your clipboard")
 
-    ####  See if user wants to quit or window was closed
+    # see if user wants to quit or window was closed
     if event == sg.WINDOW_CLOSED or event == 'Quit':
         break
 
-####  Finish up by removing from the screen
+# finish up by removing from the screen
 window.close()
